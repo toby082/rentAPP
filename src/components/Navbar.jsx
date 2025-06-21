@@ -1,124 +1,117 @@
-import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import Logo from "../images/logo/logo.png";
+import { useState } from "react";
 
-import { auth } from '../firebase.config';
+function Navbar() {
+  const [nav, setNav] = useState(false);
 
-import { ReactComponent as MenuIcon } from '../assets/svg/menu.svg';
-import { ReactComponent as CloseIcon } from '../assets/svg/close.svg';
-
-function Navbar({ loggedIn }) {
-  const [isNavOpen, setIsNavOpen] = useState(false);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const handleClick = (e) => {
-      if (window.innerWidth < 1280 && e.target.closest('.navbar-dropdown')) {
-        setIsNavOpen(false);
-      }
-    };
-    const onWindowResize = () => {
-      if (window.innerWidth >= 1280) {
-        if (!isNavOpen) {
-          setIsNavOpen(true);
-        }
-      } else {
-        setIsNavOpen(false);
-      }
-    };
-    onWindowResize();
-    window.addEventListener('resize', onWindowResize);
-    document.addEventListener('click', handleClick);
-    return () => {
-      window.removeEventListener('resize', onWindowResize);
-      document.removeEventListener('click', handleClick);
-    };
-  }, []);
-
-  const toggleNav = () => setIsNavOpen(!isNavOpen);
-
-  const logOut = async () => {
-    await auth.signOut();
-    navigate('/login');
+  const openNav = () => {
+    setNav(!nav);
   };
 
   return (
-    <nav className="ml-auto relative flex items-center justify-end gap-2 xl:gap-6">
-      {isNavOpen ? (
-        loggedIn ? (
-          <ul className="navbar-dropdown xl:flex xl:items-center xl:justify-end xl:gap-6 xl:static xl:py-0 xl:mt-0 absolute top-full right-0 w-64 xl:w-auto z-50 py-4 bg-white shadow-lg  rounded-md border xl:border-none xl:shadow-none border-gray-200 mt-2">
+    <>
+      <nav>
+        {/* mobile */}
+        <div className={`mobile-navbar ${nav ? "open-nav" : ""}`}>
+          <div onClick={openNav} className="mobile-navbar__close">
+            <i className="fa-solid fa-xmark"></i>
+          </div>
+          <ul className="mobile-navbar__links">
             <li>
-              <Link to="/category/sale" className="xl:px-0 px-4 nav-link">
-                For Sale
+              <Link onClick={openNav} to="/">
+                Home
               </Link>
             </li>
             <li>
-              <Link to="/category/rent" className="xl:px-0 px-4 nav-link">
-                For Rent
+              <Link onClick={openNav} to="/about">
+                About
               </Link>
             </li>
             <li>
-              <Link to="/profile" className="xl:px-0 px-4 nav-link">
-                Profile
+              <Link onClick={openNav} to="/models">
+                Models
               </Link>
             </li>
             <li>
-              <Link to="/create-listing" className="xl:px-0 px-4 nav-link">
-                Create listing
+              <Link onClick={openNav} to="/testimonials">
+                Testimonials
               </Link>
             </li>
             <li>
-              <Link to="/my-listings" className="xl:px-0 px-4 nav-link">
-                My listings
+              <Link onClick={openNav} to="/team">
+                Our Team
               </Link>
             </li>
             <li>
-              <Link to="/favorites" className="xl:px-0 px-4 nav-link">
-                Saved listings
-              </Link>
-            </li>
-            <li>
-              <Link to="/messages" className="xl:px-0 px-4 nav-link">
-                Messages
-              </Link>
-            </li>
-            <li>
-              <button onClick={logOut} type="button" className="xl:px-0 px-4 nav-link">
-                Logout
-              </button>
-            </li>
-          </ul>
-        ) : (
-          <ul className="navbar-dropdown xl:flex xl:items-center xl:justify-end xl:gap-6 xl:static xl:py-0 xl:mt-0 absolute top-full right-0 w-64 xl:w-auto z-50 py-4 bg-white shadow-lg  rounded-md border xl:border-none xl:shadow-none border-gray-200 mt-2">
-            <li>
-              <Link to="/category/sale" className="xl:px-0 px-4 nav-link">
-                For Sale
-              </Link>
-            </li>
-            <li>
-              <Link to="/category/rent" className="xl:px-0 px-4 nav-link">
-                For Rent
-              </Link>
-            </li>
-            <li>
-              <Link to="/login" className="xl:px-0 px-4 nav-link">
-                Log in
+              <Link onClick={openNav} to="/contact">
+                Contact
               </Link>
             </li>
           </ul>
-        )
-      ) : null}
-      {!loggedIn && (
-        <Link to="/signup" className="btn btn-primary">
-          Sign up
-        </Link>
-      )}
-      <button
-        type="button"
-        onClick={toggleNav}
-        className="btn btn-ghost border border-gray-200 ml-auto xl:hidden">
-        {isNavOpen ? <CloseIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
-      </button>
-    </nav>
+        </div>
+
+        {/* desktop */}
+
+        <div className="navbar">
+          <div className="navbar__img">
+            <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+              <img src={Logo} alt="logo-img" />
+            </Link>
+          </div>
+          <ul className="navbar__links">
+            <li>
+              <Link className="home-link" to="/">
+                Home
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link className="about-link" to="/about">
+                About
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link className="models-link" to="/models">
+                Vehicle Models
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link className="testi-link" to="/testimonials">
+                Testimonials
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link className="team-link" to="/team">
+                Our Team
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link className="contact-link" to="/contact">
+                Contact
+              </Link>
+            </li>
+          </ul>
+          <div className="navbar__buttons">
+            <Link className="navbar__buttons__sign-in" to="/">
+              Sign In
+            </Link>
+            <Link className="navbar__buttons__register" to="/">
+              Register
+            </Link>
+          </div>
+
+          {/* mobile */}
+          <div className="mobile-hamb" onClick={openNav}>
+            <i className="fa-solid fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+    </>
   );
 }
 

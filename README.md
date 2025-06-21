@@ -1,85 +1,86 @@
-<!-- Please update value in the {}  -->
+<div align='center'><img style="width:30%" src='https://user-images.githubusercontent.com/105128267/218077760-5694a4ac-4e37-4de7-b31f-268ccd27400a.png'/></div>
 
-<h1 align="center">Rent or Sell</h1>
+# About the project
 
-<div align="center">
-  <a href="https://rentorsell.netlify.app/">
-      Demo
-  </a>
-</div>
+  <p>A <b>car rental</b> website is an online platform that allows users to rent cars for personal or business use. The website provides an easy-to-use interface for searching, comparing, and reserving cars from a wide selection of vehicles that vary in make, model, size, and price.</p>
 
-<!-- TABLE OF CONTENTS -->
+👉 Live Demo: <a href='https://car-rental-pcexwfwvp-devrahuls.vercel.app/'>Live Demo</a>
 
-## Table of Contents
+<h3>Build with:</h3>
 
-- [Overview](#overview)
-  - [Built With](#built-with)
-- [Features](#features)
-- [How to use](#how-to-use)
+» Sass / Scss <br>
+» React JS
 
-<!-- OVERVIEW -->
 
-## Overview
 
-A web app built in react, tailwind and firebase that allows user to put their house online for sale or rent after becoming a member of the website.
-This project is an improved version of the project that Brad Traversy built in his React JS course on Udemy.
+# React Project Setup
 
-### Built With
+This guide provides instructions to set up and run a React project on your local machine. The project also includes Sass as a dependency for styling.
 
-<!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
+## Prerequisites
 
-- [React](https://reactjs.org/)
-- [Tailwind](https://tailwindcss.com/)
-- [DasiyUI](https://daisyui.com/)
-- [Formik](https://formik.org/)
-- [Yup](https://github.com/jquense/yup)
-- [Firebase](https://firebase.google.com/)
-- [React router v6](https://reactrouter.com/)
-- [Leaflet](https://leafletjs.com/)
-- [Swiper](https://swiperjs.com/react/)
-- [React Dropzone](https://react-dropzone.js.org/)
-- [Geocoding API](https://us1.locationiq.com/)
+Before you begin, ensure that you have the following installed on your machine:
 
-## Features
+-   Node.js (v12 or later)
+-   npm (Node Package Manager, comes with Node.js)
 
-<!-- List the features of your application or follow the template. Don't share the figma file here :) -->
+## Installation
 
-<ul>
-<li>Form validation throughout the web-app</li>
-<li>User has option to login/register through their google account.</li>
-<li>User can filter listings according to
-  <ul>
-    <li>Price: Low to High</li>
-    <li>Price: High to Low</li>
-    <li>Bedrooms</li>
-    <li>Bathrooms</li>
-    <li>Carspace</li>
-    <li>Area (in SQFT)</li>
-  </ul>
-</li>
-<li>User can create/edit/delete listings from their account</li>
-<li>Geocoding</li>
-<li>User can save listings (like wishlist)</li>
-<li>User can send message to house owner.</li>
-<li>User can see messages received.</li>
-</ul>
+1.  Clone the project repository to your local machine using Git:
+    ```
+     git clone <repository_url>` 
+    ```
+2.  Navigate to the project directory:
+    
+    ```
+     cd <project_directory>
+    ``` 
+    
+3.  Install project dependencies by running the following command:
+    
+    ``` 
+     npm install
+    ```  
+    
 
-## How To Use
+## Usage
 
-<!-- Example: -->
+To run the React project locally, follow these steps:
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+1.  Start the development server:
 
-```bash
-# Clone this repository
-$ git clone https://github.com/agrajy10/rent-or-sell
+    ``` 
+     npm start 
+    ``` 
+    This command will compile the project and start a local development server.
+    
+2.  Open your web browser and visit `http://localhost:3000`. The React application should be up and running.
+    
 
-# Install dependencies
-$ npm install
+## Styling with Sass
 
-Place your firebase config file "firebase.config.js" inside src.
-Export firestore, firebase storage and firebase auth as db, storage and auth. Then:
+This project uses Sass as a preprocessor for CSS. Sass files are located in the `src/styles/styles.sccs` directory. To compile Sass into CSS, follow these steps:
 
-# Run the app
-$ npm run dev
+1.  Run the following command in your project directory:
+    
 ```
+ npm run build-css
+``` 
+
+
+This command will compile Sass files and generate corresponding CSS files in the `src/styles/styles.sccs` directory.
+    
+2.  Link the generated CSS files in your React components to apply the styles.
+    
+
+## Additional Scripts
+
+The project includes additional scripts that you can run using the `npm run` command:
+
+-   `test`: Run tests for the project.
+-   `build`: Build the project for production.
+-   `eject`: Eject the project configuration from create-react-app.
+
+## Conclusion
+
+You should now have the React project set up on your local machine. Feel free to explore and modify the code to meet your requirements. If you encounter any issues, please refer to the project's documentation or seek support from the project's maintainers.
