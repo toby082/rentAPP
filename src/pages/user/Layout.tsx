@@ -390,7 +390,7 @@ const UserLayout: React.FC = () => {
             </span>
           </div>
           <div style={{ color: 'rgba(255,255,255,0.8)' }}>
-            让闲置物品重新焕发价值 | ©2025 Created by Genius of CityU
+            服务器租赁平台 | ©2025 Created by Genius of CityU
           </div>
         </div>
       </Footer>
