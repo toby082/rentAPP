@@ -232,10 +232,10 @@ const Home: React.FC = () => {
         color: 'white'
       }}>
         <Title level={1} style={{ color: 'white', fontSize: '3.5rem', marginBottom: '1rem', fontWeight: 'bold' }}>
-          Casual Rent
+          Server Rent
         </Title>
         <Text style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.9)', marginBottom: '2rem', display: 'block' }}>
-          让闲置物品重新焕发价值，让生活更加便捷美好
+          一站式服务器租赁平台
         </Text>
         <Space size="large" style={{ marginTop: '2rem' }}>
           <Button 

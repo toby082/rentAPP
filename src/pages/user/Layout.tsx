@@ -161,7 +161,7 @@ const UserLayout: React.FC = () => {
               onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
               onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
             >
-              Casual Rent
+              Server Rent
             </div>
             <Menu
               theme="dark"
@@ -386,7 +386,7 @@ const UserLayout: React.FC = () => {
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent'
             }}>
-              Casual Rent
+              Server Rent
             </span>
           </div>
           <div style={{ color: 'rgba(255,255,255,0.8)' }}>

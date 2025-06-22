@@ -98,7 +98,7 @@ const Login: React.FC = () => {
         title={
           <div className="text-center py-4">
             <Title level={2} className="!mb-2 !text-gray-800">
-              登录 Casual Rent
+              登录 Server Rent
             </Title>
             <Text type="secondary" className="text-base">
               欢迎回到租赁平台

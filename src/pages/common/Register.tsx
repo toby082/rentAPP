@@ -40,7 +40,7 @@ const Register: React.FC = () => {
         login(token, response.data as any, 'user');
         localStorage.setItem('userInfo', JSON.stringify(response.data));
         localStorage.setItem('userType', 'user');
-        showMessage.success('注册成功，欢迎加入Casual Rent！');
+        showMessage.success('注册成功，欢迎加入Server Rent！');
         navigate('/user');
       } else {
         showMessage.success('注册成功，请登录');
@@ -72,7 +72,7 @@ const Register: React.FC = () => {
         login(token, response.data as any, 'merchant');
         localStorage.setItem('merchantInfo', JSON.stringify(response.data));
         localStorage.setItem('userType', 'merchant');
-        showMessage.success('入驻成功，欢迎来到Casual Rent！');
+        showMessage.success('入驻成功，欢迎来到Server Rent！');
         showMessage.warning('请先通过商家认证方可上传商品');
         navigate('/merchant');
       } else {
@@ -93,7 +93,7 @@ const Register: React.FC = () => {
         title={
           <div className="text-center py-4">
             <Title level={2} className="!mb-2 !text-gray-800">
-              加入 Casual Rent
+              加入 Server Rent
             </Title>
             <Text type="secondary" className="text-base">
               开启您的租赁之旅

@@ -116,7 +116,7 @@ const AdminLayout: React.FC = () => {
       <Header className="header">
         <div className="flex justify-between items-center">
           <div className="logo text-white text-xl font-bold">
-            Casual Rent - 管理后台
+            Server Rent - 管理后台
           </div>
           
           <div className="auth-section">
@@ -194,7 +194,7 @@ const AdminLayout: React.FC = () => {
       </Layout>
 
       <Footer className="text-center">
-                    Casual Rent ©2025 Created by Genius of CityU
+                    Server Rent ©2025 Created by Genius of CityU
       </Footer>
     </Layout>
   );
